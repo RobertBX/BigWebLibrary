@@ -6,6 +6,7 @@ import java.lang.reflect.ParameterizedType;
 
 public abstract class GenericDao<T, K> {
 
+
     protected final EntityManager em;
     protected final Class<T> entityClass;
 

@@ -6,11 +6,9 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
-public class Author {
-
 
     @Entity(name = "author")
-    public class AuthorRepository implements Serializable {
+    public class Author implements Serializable {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,4 +28,4 @@ public class Author {
 
 
     }
-}
+

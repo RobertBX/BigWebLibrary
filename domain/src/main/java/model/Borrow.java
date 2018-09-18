@@ -23,6 +23,7 @@ public class Borrow implements Serializable {
     private Borrower borrower;
 
     @NotNull
+    @Temporal(TemporalType.DATE)
     private Date rental_date;
 }
 

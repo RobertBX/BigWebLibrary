@@ -3,8 +3,10 @@ package model;
 import com.sun.istack.internal.NotNull;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 
 @Entity(name = "book")
@@ -17,15 +19,17 @@ public class Book implements Serializable {
     private long id;
 
     @OneToMany(mappedBy = "borrow_id")
-    private boolean borrow;
+    private List<Borrow> borrow;
 
     @NotNull
     private String category;
 
+    @NotEmpty
     private long isbn;
 
     private int pages;
 
+    @Temporal(TemporalType.DATE)
     private Date releaseDate;
 
     private String summary;

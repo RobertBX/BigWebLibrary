@@ -11,4 +11,6 @@ public class BorrowRepository  extends GenericDao  {
         super(entityManager);
     }
 
-}
+
+    }
+

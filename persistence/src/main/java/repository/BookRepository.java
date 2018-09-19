@@ -1,12 +1,17 @@
 package repository;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import javax.persistence.EntityManager;
+import java.awt.print.Book;
+import java.util.List;
 
+public class BookRepository extends GenericDao<Book, Long>{
 
-public class BookRepository extends GenericDao implements Serializable {
-    protected BookRepository(EntityManager entityManager) {
+    public BookRepository(EntityManager entityManager) {
         super(entityManager);
     }
-
+//
+//    public Book finAllBooks(){
+//        List<Book> allBooks= new List<Book>()
+//
+//    }
 }

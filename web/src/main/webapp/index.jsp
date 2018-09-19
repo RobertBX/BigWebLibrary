@@ -18,34 +18,32 @@
     <table class="table table-bordered">
         <thead>
         <tr>
+            <th>Lp</th>
             <th>Title</th>
-            <th>Author</th>
             <th>Isbn</th>
             <th>Category</th>
-            <th>Date of borrow</th>
-            <th>Borrower</th>
-            <th>is borrow</th>
+            <th>Release</th>
+            <th>Pages</th>
+            <th>Author</th>
             <th>edit</th>
         </tr>
         </thead>
-        <tbody>
+        <c:forEach var="book" items="${requestScope.books}" varStatus="loop">
         <tr>
-            <td>example title</td>
-            <td>example author</td>
-            <td>example isbn</td>
-            <td> example category</td>
-           <td>example date</td>
-            <td>no</td>
-            <td><input type="radio" id="selectedBook"></td>
-
+            <th scope="row"> ${loop.index+1}</th>
+            <td>${book.title}</td>
+            <td>$[book.isbn}</td>
+            <td>${book.authorName}</td>
+            <td>${book.category}</td>
+            <td>${book.release}</td>
+            <td>${book.pages}</td>
+            <td>${not empty book.borrowerName ? book.borrowerName : '-'}</td>
+            <td input> class="form-check-input" type="radio" name="bookId" value="${book.id}" checked></td>
         </tr>
-
+    </c:forEach>
 
         </tbody>
     </table>
-</div>
-
-
 </div>
 <a href="addAuthor.jsp"><button type="button" class="btn btn-dark">ADD </button></a>
 <a href="editBook.jsp"><button type="button" class="btn btn-dark">EDIT</button></a>

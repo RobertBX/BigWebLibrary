@@ -1,11 +1,13 @@
 package repository;
 
+import model.Author;
+
 import javax.persistence.EntityManager;
 
-public class AuthorRepository extends GenericDao {
+public class AuthorRepository extends GenericDao<Author, Long> {
 
 
-    protected AuthorRepository(EntityManager entityManager) {
+    public AuthorRepository(EntityManager entityManager) {
         super(entityManager);
     }
 }
